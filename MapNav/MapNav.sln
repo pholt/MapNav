@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapNav", "MapNav.csproj", "{EF7BAC7E-D52F-4B49-96E0-D28EF992CDFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapNav.Tests", "..\MapNav.Tests\MapNav.Tests.csproj", "{939DE3E4-A746-450D-BD25-358F7F9A3353}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF7BAC7E-D52F-4B49-96E0-D28EF992CDFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF7BAC7E-D52F-4B49-96E0-D28EF992CDFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF7BAC7E-D52F-4B49-96E0-D28EF992CDFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF7BAC7E-D52F-4B49-96E0-D28EF992CDFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{939DE3E4-A746-450D-BD25-358F7F9A3353}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{939DE3E4-A746-450D-BD25-358F7F9A3353}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{939DE3E4-A746-450D-BD25-358F7F9A3353}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{939DE3E4-A746-450D-BD25-358F7F9A3353}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1476A625-03F4-4301-AFCF-0FBC86142371}
+	EndGlobalSection
+EndGlobal
