@@ -10,5 +10,6 @@ namespace MapNav.Tests.Models
     [TestClass]
     class PositionTest
     {
+
     }
 }

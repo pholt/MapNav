@@ -34,7 +34,7 @@ namespace MapNav.Models
         private int ValidateMagnitude(string magnitude)
         {
             int result;
-            if (int.TryParse(magnitude, out result))
+            if (int.TryParse(magnitude.Trim(), out result))
             {
                 return result;
             }
