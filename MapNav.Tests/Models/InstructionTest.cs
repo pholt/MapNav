@@ -5,34 +5,34 @@ using System;
 namespace MapNav.Tests.Models
 {
     [TestClass]
-    class InstructionTest
+    public class InstructionTest
     {
         [TestMethod]
-        public void ValidateDirectionShouldReturnUpperCaseChar()
+        public void InstructionConstructorShouldReturnUpperCaseChar()
         {
             Assert.AreEqual('L', new Instruction("l5").Direction);
         }
 
         [TestMethod]
-        public void ValidateDirectionShouldThrowExceptionForIllegalChar()
+        public void InstructionConstructorShouldThrowExceptionForIllegalChar()
         {
             Assert.ThrowsException<Exception>(() => new Instruction("b3"));
         }
 
         [TestMethod]
-        public void ValidateMagnitudeShouldReturnInt()
+        public void InstructionConstructorShouldReturnInt()
         {
             Assert.AreEqual(5, (new Instruction("l5").Magnitude));
         }
 
         [TestMethod]
-        public void ValidateMagnitudeShouldHandleExcessWhitespace()
+        public void InstructionConstructorShouldHandleExcessWhitespace()
         {
             Assert.AreEqual(5, (new Instruction("l 5 ").Magnitude));
         }
 
         [TestMethod]
-        public void ValidateMagnitudeShouldThrowExceptionForNonIntegerInput()
+        public void InstructionConstructorShouldThrowExceptionForNonIntegerInput()
         {
             Assert.ThrowsException<Exception>(() => new Instruction("lu"));
         }

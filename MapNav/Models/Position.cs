@@ -8,9 +8,9 @@ namespace MapNav.Models
 {
     public class Position
     {
-        private int XPos { get; set; }
-        private int YPos { get; set; }
-        private Facing Facing { get; set; }
+        public int XPos { get; private set; }
+        public int YPos { get; private set; }
+        public Facing Facing { get; private set; }
 
         public Position(Facing facing = Facing.North, int x = 0, int y = 0)
         {
@@ -25,13 +25,18 @@ namespace MapNav.Models
             return Math.Abs(XPos) + Math.Abs(YPos);
         }
 
-        public void ConsumeInstruction(Instruction input)
+        public void ProcessInstruction(Instruction input)
         {
+            if (input == null)
+            {
+                throw new Exception("Instruction input must not be null.");
+            }
+
             AdjustFacing(input.Direction);
             AdjustPosition(input.Magnitude);
         }
 
-        private void AdjustFacing(char adjustment)
+        public void AdjustFacing(char adjustment)
         {
             int facing = (int)this.Facing;
             switch (adjustment)
@@ -57,7 +62,7 @@ namespace MapNav.Models
             this.Facing = (Facing)facing;
         }
 
-        private void AdjustPosition(int magnitude)
+        public void AdjustPosition(int magnitude)
         {
             switch (this.Facing)
             {

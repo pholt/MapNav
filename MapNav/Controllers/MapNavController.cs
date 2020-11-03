@@ -39,7 +39,7 @@ namespace MapNav.Controllers
             Position position = new Position();
             while (instructions.Count > 0)
             {
-                position.ConsumeInstruction(instructions.Dequeue());
+                position.ProcessInstruction(instructions.Dequeue());
             }
 
             return position.GetDistance();

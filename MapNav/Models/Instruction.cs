@@ -13,6 +13,8 @@ namespace MapNav.Models
         public char Direction { get; private set; }
         public int Magnitude { get; private set; }
 
+        // Instructions should start with a character determining "turn left (L)" or "turn right (R)"
+        // then whole numbers representing how far to move. Example: "L43".
         public Instruction(string instruction)
         {
             this.Direction = ValidateDirection(instruction[0]);
