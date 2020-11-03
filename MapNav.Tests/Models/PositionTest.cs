@@ -8,7 +8,7 @@ namespace MapNav.Tests.Models
     public class PositionTest
     {
         [TestMethod]
-        public void GetDistanceShouldReturnXAndYAddedTogether()
+        public void GetDistance_WithValidInput_ReturnsXAndYAddedTogether()
         {
             Position position = new Position();
             position.ProcessInstruction(new Instruction("R3"));
@@ -18,17 +18,18 @@ namespace MapNav.Tests.Models
         }
 
         [TestMethod]
-        public void GetDistanceShouldCountAnyCoordinateAsPositive()
+        public void GetDistance_WithNegativePositionValues_TreatsValuesAsPositiveWhenAdding()
         {
             Position position = new Position();
             position.ProcessInstruction(new Instruction("L2"));
             position.ProcessInstruction(new Instruction("L5"));
 
+            // (-2, -5)
             Assert.AreEqual(7, position.GetDistance());
         }
 
         [TestMethod]
-        public void ProcessInstructionShouldThrowExceptionForNullInput()
+        public void ProcessInstruction_WithNullInput_ThrowsException()
         {
             Position position = new Position();
 
@@ -36,7 +37,7 @@ namespace MapNav.Tests.Models
         }
 
         [TestMethod]
-        public void AdjustFacingShouldTurnRightWhenGivenR()
+        public void AdjustFacing_WithR_TurnsRight()
         {
             Position position = new Position(Facing.North);
             position.AdjustFacing('R');
@@ -45,7 +46,7 @@ namespace MapNav.Tests.Models
         }
 
         [TestMethod]
-        public void AdjustFacingShouldTurnRightWhenGivenRAndWrapDirections()
+        public void AdjustFacing_WithRAndFacingWest_SetsFacingToNorth()
         {
             Position position = new Position(Facing.West);
             position.AdjustFacing('R');
@@ -54,7 +55,7 @@ namespace MapNav.Tests.Models
         }
 
         [TestMethod]
-        public void AdjustFacingShouldTurnLeftWhenGivenL()
+        public void AdjustFacing_WithL_TurnsLeft()
         {
             Position position = new Position(Facing.South);
             position.AdjustFacing('L');
@@ -63,7 +64,7 @@ namespace MapNav.Tests.Models
         }
 
         [TestMethod]
-        public void AdjustFacingShouldTurnLeftWhenGivenLAndWrapDirections()
+        public void AdjustFacing_WithLAndFacingNorth_SetsFacingToWest()
         {
             Position position = new Position(Facing.North);
             position.AdjustFacing('L');
@@ -72,7 +73,7 @@ namespace MapNav.Tests.Models
         }
 
         [TestMethod]
-        public void AdjustPositionShouldAddToYPosWhenFacingNorth()
+        public void AdjustPosition_WithValidInputFacingNorth_AddsToYPos()
         {
             Position positionFacingNorth = new Position(Facing.North);
             positionFacingNorth.AdjustPosition(5);
@@ -82,7 +83,7 @@ namespace MapNav.Tests.Models
         }
 
         [TestMethod]
-        public void AdjustPositionShouldAddToXPosWhenFacingEast()
+        public void AdjustPosition_WithValidInputFacingEast_AddsToXPos()
         {
             Position positionFacingEast = new Position(Facing.East);
             positionFacingEast.AdjustPosition(4);
@@ -92,7 +93,7 @@ namespace MapNav.Tests.Models
         }
 
         [TestMethod]
-        public void AdjustPositionShouldSubtractFromYPosWhenFacingSouth()
+        public void AdjustPosition_WithValidInputFacingSouth_SubtractsFromYPos()
         {
             Position positionFacingSouth = new Position(Facing.South);
             positionFacingSouth.AdjustPosition(9);
@@ -102,7 +103,7 @@ namespace MapNav.Tests.Models
         }
 
         [TestMethod]
-        public void AdjustPositionShouldSubtractFromXPosWhenFacingWest()
+        public void AdjustPosition_WithValidInputFacingWest_SubtractsFromXPos()
         {
             Position positionFacingWest = new Position(Facing.West);
             positionFacingWest.AdjustPosition(6);

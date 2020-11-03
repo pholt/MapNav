@@ -8,31 +8,31 @@ namespace MapNav.Tests.Models
     public class InstructionTest
     {
         [TestMethod]
-        public void InstructionConstructorShouldReturnUpperCaseChar()
+        public void InstructionConstructor_WithLowerCaseChar_ReturnsUpperCaseChar()
         {
             Assert.AreEqual('L', new Instruction("l5").Direction);
         }
 
         [TestMethod]
-        public void InstructionConstructorShouldThrowExceptionForIllegalChar()
+        public void InstructionConstructor_WithIllegalChar_ThrowsException()
         {
             Assert.ThrowsException<Exception>(() => new Instruction("b3"));
         }
 
         [TestMethod]
-        public void InstructionConstructorShouldReturnInt()
+        public void InstructionConstructor_WithValidInput_ReturnsInt()
         {
             Assert.AreEqual(5, (new Instruction("l5").Magnitude));
         }
 
         [TestMethod]
-        public void InstructionConstructorShouldHandleExcessWhitespace()
+        public void InstructionConstructor_WithWhitespaceInInput_IngestsWithoutError()
         {
             Assert.AreEqual(5, (new Instruction("l 5 ").Magnitude));
         }
 
         [TestMethod]
-        public void InstructionConstructorShouldThrowExceptionForNonIntegerInput()
+        public void InstructionConstructor_WithNonIntegerInput_ThrowsException()
         {
             Assert.ThrowsException<Exception>(() => new Instruction("lu"));
         }
