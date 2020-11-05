@@ -1,25 +1,18 @@
 ﻿using MapNav.Models;
-using Microsoft.Ajax.Utilities;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace MapNav.Controllers
 {
     public class MapNavController : ApiController
     {
-        [HttpGet]
-        public JObject GetMapNav(string json)
+        [HttpPost]
+        public string GetMapNav([FromBody] MapNavInput input)
         {
-            var data = (JObject)JsonConvert.DeserializeObject(json);
-            Queue<Instruction> instructionSet = ParseMapInstructions(data["data"].ToString());
+            Queue<Instruction> instructionSet = ParseMapInstructions(input.Data.ToString());
             int output = CalculateDistance(instructionSet);
-            return new JObject(new JProperty("data", output));
+            return new JObject(new JProperty("data", output)).ToString();
         }
 
         private Queue<Instruction> ParseMapInstructions(string input)

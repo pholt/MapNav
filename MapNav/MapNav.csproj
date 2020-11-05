@@ -137,6 +137,7 @@
     </Compile>
     <Compile Include="Models\Facing.cs" />
     <Compile Include="Models\Instruction.cs" />
+    <Compile Include="Models\MapNavInput.cs" />
     <Compile Include="Models\Position.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
