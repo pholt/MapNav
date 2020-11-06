@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MapNavService } from '../services/map-nav.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { MapNavService } from '../services/map-nav.service';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [MapNavService],
   bootstrap: [AppComponent]
