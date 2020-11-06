@@ -25,6 +25,6 @@ Example JSON string output:
 This JSON is read by the client which pulls out the data value and displays it.
 
 Known issues:
-* Negative numbers work and you can get a negative output
+* Negative numbers work, though you can't get a negative output
 * No form validation or error handling on the front end
 * Large integers were not tested, we are at the mercy of int.Parse()
