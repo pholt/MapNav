@@ -10,19 +10,18 @@ import { MapNavService } from '../services/map-nav.service';
 export class AppComponent {
   title = 'MapNavFE';
   public input: FormControl;
-  public output: FormControl;
+  public output: string;
 
   constructor(
     private mapNavService: MapNavService
   ) { 
     this.input = new FormControl("L3, R2, L5, R1, L1, L2");
-    this.output = new FormControl("");
   }
 
   public getDistance() {
     this.mapNavService.getMapNav(this.input.value).subscribe(result => {
       let obj: {data:string} = JSON.parse(result);
-      this.output.setValue(obj.data);
+      this.output = obj.data;
     });
   }
 
