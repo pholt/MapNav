@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\phili\source\repos\MapNav\MapNav\MapNavFE\src\polyfills.ts */"hN/g");
+module.exports = __webpack_require__(/*! C:\Users\phili\source\repos\MapNav2\MapNav\MapNavFE\src\polyfills.ts */"hN/g");
 
 
 /***/ }),
