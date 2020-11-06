@@ -1,11 +1,11 @@
 <div class="padded">
+  <hr width="500px" />
   <div class="center">
     <label>Put instructions here! Comma separated values only!</label>
   </div>
   <div class="center">
-    <mat-form-field>
-      <mat-label>Input</mat-label>
-      <textarea matInput [formControl]="input" rows="3" cols="300" style=""></textarea>
+    <mat-form-field class="field">
+      <textarea matInput [formControl]="input"></textarea>
     </mat-form-field>
   </div>
   <div class="center">
@@ -14,8 +14,11 @@
   <div class="center">
     <label>
       Output:
-      <mat-card>{{output}}</mat-card>
     </label>
   </div>
+  <div class="center">
+    <mat-card>{{output}}</mat-card>
+  </div>
+  <hr width="500px" />
 </div>
 

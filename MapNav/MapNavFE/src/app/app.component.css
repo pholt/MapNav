@@ -7,10 +7,26 @@
     padding-top: 10%;
 }
 
-input.textfield {
-    width: 10em
+.border {
+    border-style: solid;
+    border: 1px;
+    border-bottom-color:gray;
+}
+
+.field {
+    width: 23.5em
 }
 
 textarea {
-    width: 190em
+    width: 100%
+}
+
+button {
+    margin: 1em;
+}
+
+mat-card {
+    overflow: auto;
+    text-align: center;
+    min-width: 5em;
 }
