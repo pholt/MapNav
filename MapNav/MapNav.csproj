@@ -150,8 +150,20 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="MapNavFE\dist\MapNavFE\favicon.ico" />
+    <Content Include="MapNavFE\dist\MapNavFE\index.html" />
+    <Content Include="MapNavFE\dist\MapNavFE\main.js" />
+    <Content Include="MapNavFE\dist\MapNavFE\polyfills.js" />
+    <Content Include="MapNavFE\dist\MapNavFE\runtime.js" />
+    <Content Include="MapNavFE\dist\MapNavFE\styles.js" />
+    <Content Include="MapNavFE\dist\MapNavFE\vendor.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="MapNavFE\dist\MapNavFE\main.js.map" />
+    <Content Include="MapNavFE\dist\MapNavFE\polyfills.js.map" />
+    <Content Include="MapNavFE\dist\MapNavFE\runtime.js.map" />
+    <Content Include="MapNavFE\dist\MapNavFE\styles.js.map" />
+    <Content Include="MapNavFE\dist\MapNavFE\vendor.js.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -175,6 +187,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\NgApp.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -227,6 +240,14 @@
     </PropertyGroup>
     <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
+  <PropertyGroup>
+    <PreBuildEvent>echo "cd $(SolutionDir)MapNavFE" &amp;&amp;^
+cd "$(SolutionDir)MapNavFE" &amp;&amp;^
+echo "building MapNavFE" &amp;&amp;^
+ng build &amp;&amp;^
+echo 'copy files' &amp;&amp;^
+xcopy /I /E /Y "$(SolutionDir)MapNavFE\dist" "$(ProjectDir)Scripts\NgApp"</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -1,0 +1,14 @@
+<div class="container center_div">
+  <p>
+    Input instructions here! Comma separated values only!
+  </p>
+  <div class="col-md-4">
+    <textarea [formControl]="input" rows="3" cols="50"></textarea>
+    <hr />
+    <button (click)="getDistance()" type="button" id="submit">Calculate!</button>
+  </div>
+  <br />
+  <label>Output:
+    <input type="text" [formControl]="output" readonly/>
+  </label>
+</div>

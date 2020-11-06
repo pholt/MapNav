@@ -11,7 +11,7 @@ namespace MapNav.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return View("NgApp");
         }
     }
 }
