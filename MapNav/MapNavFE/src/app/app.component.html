@@ -1,11 +1,21 @@
-<div class="container center_div">
-  <mat-form-field>
-    <mat-label>Input instructions here! Comma separated values only!</mat-label>
-    <textarea matInput [formControl]="input" rows="3" cols="50"></textarea>
-  </mat-form-field>
-  <button mat-button (click)="getDistance()" type="button" id="submit">Calculate!</button>
-  <br />
-  <label>Output:
-    <mat-card>{{output}}</mat-card>
-  </label>
+<div class="padded">
+  <div class="center">
+    <label>Put instructions here! Comma separated values only!</label>
+  </div>
+  <div class="center">
+    <mat-form-field>
+      <mat-label>Input</mat-label>
+      <textarea matInput [formControl]="input" rows="3" cols="300" style=""></textarea>
+    </mat-form-field>
+  </div>
+  <div class="center">
+    <button mat-raised-button color="primary" (click)="getDistance()">Calculate!</button>
+  </div>
+  <div class="center">
+    <label>
+      Output:
+      <mat-card>{{output}}</mat-card>
+    </label>
+  </div>
 </div>
+

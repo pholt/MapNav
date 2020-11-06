@@ -1,0 +1,16 @@
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.padded {
+    padding-top: 10%;
+}
+
+input.textfield {
+    width: 10em
+}
+
+textarea {
+    width: 190em
+}
